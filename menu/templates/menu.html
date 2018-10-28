@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+{% block content %}
+<div class="container">
+  <div id="table">
+    <table border=0>
+    <thead>
+      <tr>
+      {% for item_head in items.keys %}
+      <th>{{ item_head }}</th>
+      {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        {% for item in items.values %}
+        <td>{{ item }}</td>
+        {% endfor %}
+      </tr>
+    </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

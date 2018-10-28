@@ -7,17 +7,20 @@ from menu.models import MenuItem
 from menu.models import Menu
 # Register your models here.
 
-class MenuItemInline(StackedInline):
+class MenuItemInline(admin.StackedInline):
     model = MenuItem
+    list_display = ['item_name']
     fields = ('item_name','price','notes')
 
 
-class MenuItemAdmin():
+class MenuItemAdmin(admin.ModelAdmin):
     model = MenuItem
+    list_display = ['item_name']
     fields = ('item_name','price','notes')
 
-class MenuAdmin():
+class MenuAdmin(admin.ModelAdmin):
+    list_display = ['name']
     inlines = [MenuItemInline]
 
-admin.site.register(Menu, MenuAdmin)
 admin.site.register(MenuItem, MenuItemAdmin)
+admin.site.register(Menu, MenuAdmin)

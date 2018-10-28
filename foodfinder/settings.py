@@ -196,13 +196,12 @@ CMS_PLACEHOLDER_CONF = {}
 
 DATABASES = {
     'default': {
-        'CONN_MAX_AGE': 0,
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'foodfinder',
+        'USER': 'foody',
+        'PASSWORD': 'beantown',
         'HOST': 'localhost',
-        'NAME': 'project.db',
-        'PASSWORD': '',
         'PORT': '',
-        'USER': ''
     }
 }
 
