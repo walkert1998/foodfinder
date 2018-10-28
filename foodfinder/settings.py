@@ -140,6 +140,7 @@ INSTALLED_APPS = (
     'djangocms_video',
     'foodfinder',
     'foodapp',
+    'menu',
     'djangocms_icon',
     'djangocms_bootstrap4',
     'djangocms_bootstrap4.contrib.bootstrap4_alerts',
@@ -195,13 +196,12 @@ CMS_PLACEHOLDER_CONF = {}
 
 DATABASES = {
     'default': {
-        'CONN_MAX_AGE': 0,
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'foodfinder',
+        'USER': 'foody',
+        'PASSWORD': 'beantown',
         'HOST': 'localhost',
-        'NAME': 'project.db',
-        'PASSWORD': '',
         'PORT': '',
-        'USER': ''
     }
 }
 
