@@ -14,10 +14,13 @@ TAGS = [
 ]
 class Restaurant(models.Model):
     name = models.CharField(max_length=200)
+    rating = models.IntegerField(blank=True, null=True)
     address = models.CharField(max_length=200)
     website = models.CharField(max_length=200, blank=True, null=True)
     phone_number = models.CharField(max_length=200, blank=True, null=True)
     menu_link = models.CharField(max_length=200, blank=True, default=False)
+    lowest_price = models.IntegerField(null=True, blank=True)
+    highest_price = models.IntegerField(null=True, blank=True)
     delivery_services = models.BooleanField(blank=True, default=False)
     student_discounts = models.BooleanField(blank=True, default=False)
     free_wifi = models.BooleanField(blank=True, default=False)
