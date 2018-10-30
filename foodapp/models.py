@@ -1,4 +1,5 @@
 from django.db import models
+from django.template.defaultfilters import slugify
 from menu.models import Menu
 
 # Create your models here.

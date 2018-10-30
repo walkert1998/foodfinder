@@ -1,15 +1,256 @@
 {% extends "base.html" %}
 {% load cms_tags %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
 {% block content %}
-<div class="container">
-  <h1>Paddy's</h1>
-  <h3>It's a restaurant</h3>
-  {% for restaurant in restaurants %}
-  <a href="{% url 'foodapp:restaurant_detail' pk=restaurant.pk %}">{{ restaurant.name }}</a>
-  <br/>
-  <p>{{ restaurant.rating }} / 5</p>
-  <p>${{ restaurant.lowest_price }} - ${{ restaurant.highest_price }}</p>
-  <hr/>
-  {% endfor %}
-</div>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="{% static 'foodapp/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="{% static 'foodapp/fonts/ionicons.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="{% static 'foodapp/css/Article-Dual-Column.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'foodapp/css/Map-Clean.css' %}">
+    <link rel="stylesheet" href="{% static 'foodapp/css/Simple-Slider.css' %}">
+    <link rel="stylesheet" href="{% static 'foodapp/css/Social-Icons.css' %}">
+</head>
+
+<body style="background-color:rgb(248,243,243);">
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top portfolio-navbar gradient" style="background-color:rgb(161,248,232);">
+        <div class="container"><a class="navbar-brand logo" href="#">FoodFinder</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                id="navbarNav">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="weekly_recc.html">Weekly Reccomendation</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="about_us.html">About Us</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="restaurant-temp.html">Restaurant Temp</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page lanidng-page">
+        <section class="portfolio-block block-intro" style="width:992;height:35px;padding:0px;"></section>
+        <section class="portfolio-block call-to-action border-bottom" style="height:52px;width:991px;padding:1px;">
+            <div class="container">
+                <p style="height:65px;font-size:30px;padding:2px;margin:0px 0px 30px 45px;">&nbsp;WELCOME TO FOOD FINDER</p>
+            </div>
+        </section>
+    </main>
+    <section class="portfolio-block website gradient" style="padding:29px;">
+        <div class="container" style="height:244px;">
+            <div class="row align-items-center">
+                <div class="col-md-12 col-lg-5" style="height:188px;">
+                    <div class="carousel slide" data-ride="carousel" id="carousel-1">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active" style="height:232px;"><img class="w-100 d-block" src="http://placeholdit.imgix.net/~text?txtsize=42&amp;txt=Carousel+Image&amp;w=1400&amp;h=600" alt="Slide Image" style="height:224px;"></div>
+                            <div class="carousel-item" style="height:232;"><img class="w-100 d-block" src="http://placeholdit.imgix.net/~text?txtsize=42&amp;txt=Carousel+Image&amp;w=1400&amp;h=600" alt="Slide Image"></div>
+                            <div class="carousel-item" style="height:232;"><img class="w-100 d-block" src="http://placeholdit.imgix.net/~text?txtsize=42&amp;txt=Carousel+Image&amp;w=1400&amp;h=600" alt="Slide Image"></div>
+                        </div>
+                        <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev"><span class="carousel-control-prev-icon"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#carousel-1" role="button"
+                                data-slide="next"><span class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a></div>
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-1" data-slide-to="1"></li>
+                            <li data-target="#carousel-1" data-slide-to="2"></li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="col" style="height:36px;">
+                    <h3>Open Now</h3>
+                    <p>Showing some Currently Open Restaurants</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="portfolio-block website gradient" style="padding:29px;background-image:url(&quot;none&quot;);">
+        <div class="container">
+            <section class="portfolio-block skills" style="padding:73px;">
+                <div class="container">
+                    <div class="heading">
+                        <h2><a class="btn btn-outline-primary active btn-block btn-lg" role="button" href="restaurant-temp.html" style="color:white;"><span style="text-decoration: underline;">CAFE'S</span></a></h2>
+                    </div>
+                    <div class="row">
+                      <!-- {% for restaurant in restaurants %}
+                        <div class="col-md-4">
+                            <div class="card special-skill-item border-0">
+                              <a href="{% url 'foodapp:restaurant_detail' pk=restaurant.pk %}">
+                                <div class="card-header bg-transparent border-0">
+                                    <img class="rounded-circle img-fluid" src="{% static 'foodapp/img/1470250937442.jpg' %}" style="width:163px;">
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="text-primary card-title">{{restaurant.name}}</h3>
+                                    <p class="card-text">Price Range: ${{restaurant.lowest_price}} - ${{restaurant.highest_price}}&nbsp;</p>
+                                    <p class="card-text">Food Finder Rank: 8/10</p>
+                                </div>
+                              </a>
+                            </div>
+                        </div>
+                        {% endfor %} -->
+                        <div class="col-md-4">
+                            <div class="card special-skill-item border-0">
+                              <a href="/5/">
+                                <div class="card-header bg-transparent border-0">
+
+                                    <img class="rounded-circle" src="{% static 'foodapp/img/1470250937442.jpg' %}" width="50px" height="50px" style="width:163px;height:163.734px;">
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="text-primary card-title">JUST US</h3>
+                                    <p class="card-text">Price Range: $2 - $16&nbsp;</p>
+                                    <p class="card-text">Food Finder Rank: 8/10&nbsp;</p>
+                                </div>
+                              </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card special-skill-item border-0">
+                              <a href="/6/">
+                                <div class="card-header bg-transparent border-0">
+
+                                    <img class="rounded-circle" src="{% static 'foodapp/img/tan_logo.jpg' %}" width="50px" height="50px" style="width:163px;height:163.734px;">
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="text-primary card-title">TAN COFFEE</h3>
+                                    <p class="card-text">Price Range: $5 - $20&nbsp;</p>
+                                    <p class="card-text">Food Finder Rank: 8/10&nbsp;</p>
+                                </div>
+                              </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card special-skill-item border-0">
+                              <a href="/7/">
+                                <div class="card-header bg-transparent border-0">
+                                    <img class="rounded-circle" src="{% static 'foodapp/img/subway_cafe_logo.jpg' %}" style="width:163px;height:163.734px;">
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="text-primary card-title">SUBWAY CAFE</h3>
+                                    <p class="card-text">Price Range: $8 - $20&nbsp;</p>
+                                    <p class="card-text">Food Finder Rank: 7/10</p>
+                                </div>
+                              </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    <section class="portfolio-block website gradient">
+        <div class="container">
+            <section class="portfolio-block skills" style="padding:73px;background-image:url(&quot;linear-gradient(120deg,#7f70f5,#0ea0ff);color:#fff;">
+                <div class="container">
+                    <div class="heading">
+                        <h2><button class="btn btn-outline-primary active btn-block btn-lg" type="button" style="color:rgb(14,160,255);background-color:white;">PIZZA</button></h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card special-skill-item border-0">
+                              <a href="/8/">
+                                <div class="card-header bg-transparent border-0"><img class="rounded-circle" src="{% static 'foodapp/img/pronto.png' %}" style="width:163px;height:163.734px;background-color:none;"></div>
+                                <div class="card-body">
+                                    <h3 class="text-primary card-title">PRONTO PIZZA</h3>
+                                    <p class="card-text">Price Range: $5 - $30 &nbsp; &nbsp;</p>
+                                    <p class="card-text">Food Finder Rank: 6/10</p>
+                                </div>
+                              </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card special-skill-item border-0">
+                              <a href="">
+                                <div class="card-header bg-transparent border-0"><img class="rounded-circle" src="{% static 'foodapp/img/picasso.jpg' %}" style="width:163px;height:163.734px;background-color:none;"></div>
+                                <div class="card-body">
+                                    <h3 class="text-primary card-title">PICASSO PIZZA</h3>
+                                    <p class="card-text">Price Range: $5 - $30 &nbsp; &nbsp;</p>
+                                    <p class="card-text">Food Finder Rank: 6/10</p>
+                                </div>
+                              </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card special-skill-item border-0">
+                              <a href="">
+                                <div class="card-header bg-transparent border-0"><img class="rounded-circle" src="{% static 'foodapp/img/la_torta.jpg' %}" style="width:163px;height:163.734px;"></div>
+                                <div class="card-body">
+                                    <h3 class="text-primary card-title">LA TORTA</h3>
+                                    <p class="card-text">Price Range: $5 - $30 &nbsp; &nbsp;<br></p>
+                                    <p class="card-text">Food Finder Rank: 8/10</p>
+                                </div>
+                              </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    <section class="portfolio-block website gradient" style="padding:29px;background-image:url(&quot;none&quot;);">
+        <div class="container">
+            <section class="portfolio-block skills" style="padding:73px;">
+                <div class="container">
+                    <div class="heading">
+                        <h2><button class="btn btn-outline-primary active btn-block btn-lg" type="button" style="color:white;">PUBS</button></h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card special-skill-item border-0">
+                              <a href="/4/">
+                                <div class="card-header bg-transparent border-0"><img class="rounded-circle" src="{% static 'foodapp/img/paddys.png' %}" style="width:163px;height:163.734px;background-color:none;"></div>
+                                <div class="card-body">
+                                    <h3 class="text-primary card-title">PADDYS BREWPUB</h3>
+                                    <p class="card-text">Price Range: $5 - $30 &nbsp; &nbsp;<br></p>
+                                    <p class="card-text">Food Finder Rank: 8/10</p>
+                                </div>
+                              </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card special-skill-item border-0">
+                              <a href="">
+                                <div class="card-header bg-transparent border-0"><img class="rounded-circle" src="{% static 'foodapp/img/libpub.png' %}" style="width:163px;height:163.734px;background-color:none;"></div>
+                                <div class="card-body">
+                                    <h3 class="text-primary card-title">THE LIBRARY PUB WINE TAVERN</h3>
+                                    <p class="card-text">Price Range: $5 - $30 &nbsp; &nbsp;</p>
+                                    <p class="card-text">Food Finder Rank: 9/10</p>
+                                </div>
+                              </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card special-skill-item border-0">
+                              <a href="/3/">
+                                <div class="card-header bg-transparent border-0"><img class="rounded-circle" src="{% static 'foodapp/img/joes.jpg' %}" style="width:163px;height:163.734px;background-color:none;"></div>
+                                <div class="card-body">
+                                    <h3 class="text-primary card-title">JOES FOOD EMPORIUM</h3>
+                                    <p class="card-text">Price Range: $5 - $30 &nbsp; &nbsp;</p>
+                                    <p class="card-text">Food Finder Rank: 6/10<br></p>
+                                </div>
+                              </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    <footer class="page-footer">
+        <div class="container">
+            <div class="links"><a href="#">About me</a><a href="#">Contact me</a><a href="#">Projects</a></div>
+            <div class="social-icons"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-instagram-outline"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a></div>
+        </div>
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+    <script src="assets/js/Simple-Slider.js"></script>
+    <script src="assets/js/theme.js"></script>
+</body>
 {% endblock %}
+</html>
