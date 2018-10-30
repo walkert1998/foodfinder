@@ -2,7 +2,7 @@
 
 Project: FoodFinder
 
-Group members: Thomas Walker, Cornelius Smith, Asma Lokhandwala, 
+Group members: Thomas Walker, Cornelius Smith, Asma Lokhandwala,
 				William Wambolt
 
 --Implementation status--
@@ -12,12 +12,18 @@ deployed to heroku properly. It is possible to run this project on
 localhost but it would require installing several pieces of software
 related to the django framework, as of this moment we feel it would
 be irresponsible of us to try and make people jump through hoops if
-we don't have the exact steps mapped out (which is due to mostly a 
+we don't have the exact steps mapped out (which is due to mostly a
 lack of free time before we had to hand in the implementation).
 
 There are a few missing features which we intended to include but
 will likely do so between now and the user study. Including reviews
-and a page where you can see all restaurants of a certain category
+and a page where you can see all restaurants of a certain category.
+
+We also only included a small number of restaurants as a proof-of-concept
+and so that we could focus on the look and navigation of the restaurant
+pages rather than the volume. To add a dozen more restaurants could be
+easily done in an hour with how our models are set up but we figured it was better
+to focus on quality over quantity.
 
 --Files overview--
 
