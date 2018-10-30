@@ -15,7 +15,7 @@ TAGS = [
 ]
 class Restaurant(models.Model):
     name = models.CharField(max_length=200)
-    # rating = models.IntegerField(blank=True, null=True)
+    rating = models.IntegerField(blank=True, null=True)
     restaurant_address = models.CharField(max_length=200)
     website = models.CharField(max_length=200, blank=True, null=True)
     image = models.ImageField(null=True, blank=True)
