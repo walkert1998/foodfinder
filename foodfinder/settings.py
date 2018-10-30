@@ -141,7 +141,6 @@ INSTALLED_APPS = (
     'djangocms_video',
     'foodfinder',
     'foodapp',
-    'menu',
     'djangocms_icon',
     'djangocms_bootstrap4',
     'djangocms_bootstrap4.contrib.bootstrap4_alerts',
