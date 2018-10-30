@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+{% block content %}
+<div class="container">
+  <h1>Paddy's</h1>
+  <h3>It's a restaurant</h3>
+  {% for restaurant in restaurants %}
+  <a href="{% url 'foodapp:restaurant_detail' pk=restaurant.pk %}">{{ restaurant.name }}</a>
+  <p>{{ restaurant.address }}</p>
+  <a href="{{ restaurant.website }}">Website</a>
+  <br/>
+  <a href="{{ restaurant.twitter_link }}">Twitter</a>
+  <br/>
+  <p>{{ restaurant.phone_number }}</p>
+  <p>{{ restaurant.rating }}</p>
+  {% endfor %}
+</div>
+{% endblock %}

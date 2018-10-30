@@ -9,13 +9,13 @@ from menu.models import Menu
 
 class MenuItemInline(admin.StackedInline):
     model = MenuItem
-    list_display = ['item_name']
+    list_display = ['item_name','price']
     fields = ('item_name','price','notes')
 
 
 class MenuItemAdmin(admin.ModelAdmin):
     model = MenuItem
-    list_display = ['item_name']
+    list_display = ['item_name', 'price']
     fields = ('item_name','price','notes')
 
 class MenuAdmin(admin.ModelAdmin):

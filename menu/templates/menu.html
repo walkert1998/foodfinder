@@ -1,24 +1,25 @@
-
 {% load cms_tags %}
 {% block content %}
 <div class="container">
-  <div id="table">
-    <table border=0>
-    <thead>
-      <tr>
-      {% for item_head in items.keys %}
-      <th>{{ item_head }}</th>
+  <div class="row">
+    <div class="col-2">
+      <h4>Name</h4>
+      {% for item in items %}
+      <p>{{ item.item_name }}</p>
       {% endfor %}
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        {% for item in items.values %}
-        <td>{{ item }}</td>
-        {% endfor %}
-      </tr>
-    </tbody>
-    </table>
+    </div>
+    <div class="col-1">
+      <h4>Price</h4>
+      {% for item in items %}
+      <p>${{ item.price }}</p>
+      {% endfor %}
+    </div>
+    <div class="col-9">
+      <h4>Description</h4>
+      {% for item in items %}
+      <p>{{ item.notes }}</p>
+      {% endfor %}
+    </div>
   </div>
 </div>
 {% endblock %}
