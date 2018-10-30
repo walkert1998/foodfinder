@@ -31,13 +31,13 @@ class Restaurant(models.Model):
     twitter_link = models.CharField(max_length=200, blank=True, null=True)
     facebook_link = models.CharField(max_length=200, blank=True, null=True)
     instagram_link = models.CharField(max_length=200, blank=True, null=True)
-    monday_closing_time = models.TimeField(blank=True, null=True)
-    tuesday_closing_time = models.TimeField(blank=True, null=True)
-    wednesday_closing_time = models.TimeField(blank=True, null=True)
-    thursday_closing_time = models.TimeField(blank=True, null=True)
-    friday_closing_time = models.TimeField(blank=True, null=True)
-    saturday_closing_time = models.TimeField(blank=True, null=True)
-    sunday_closing_time = models.TimeField(blank=True, null=True)
+    monday_hours = models.CharField(max_length=200, blank=True, null=True)
+    tuesday_hours = models.CharField(max_length=200, blank=True, null=True)
+    wednesday_hours = models.CharField(max_length=200, blank=True, null=True)
+    thursday_hours = models.CharField(max_length=200, blank=True, null=True)
+    friday_hours = models.CharField(max_length=200, blank=True, null=True)
+    saturday_hours = models.CharField(max_length=200, blank=True, null=True)
+    sunday_hours = models.CharField(max_length=200, blank=True, null=True)
 
     def __str__(self):
         return self.name
