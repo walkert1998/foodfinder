@@ -32,4 +32,4 @@ pytz==2018.5
 six==1.11.0
 tzlocal==1.5.1
 Unidecode==0.4.21
-whitenoise==4.1
+whitenoise==3.3.1
