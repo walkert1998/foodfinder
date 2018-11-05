@@ -49,7 +49,7 @@ class Tag(models.Model):
     restaurant = models.ForeignKey(Restaurant)
 
 class Review(models.Model):
-    customer_name = models.CharField(max_length=200, null=True, blank=True)
+    name = models.CharField(max_length=200, null=True)
     created_date = models.DateTimeField(default=timezone.now)
     rating = models.IntegerField()
     review_text = models.TextField(null=True, blank=True)

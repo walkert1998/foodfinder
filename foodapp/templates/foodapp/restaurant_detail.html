@@ -242,7 +242,7 @@
     <hr/>
     <div class="row">
       <div class="col-3">
-        <h5>{{ review.customer_name }}</h5>
+        <h5>{{ review.name }}</h5>
         <h6>{{ review.rating }} / 10</h6>
       </div>
       <div class="col-6">
@@ -252,8 +252,7 @@
     {% empty %}
     <hr/>
     <div class="text-center" style="background-color:white;">
-      <p>Be the first to add a review</p>
-      <a href="#">Click here to create an account!</a>
+      <p>Be the first to add a review!</p>
     </div>
     {% endfor %}
   </div>
