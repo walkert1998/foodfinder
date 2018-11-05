@@ -231,13 +231,18 @@
       </div>
     </div>
   </section>
+  <br/>
+  <h1 style="text-align:center;">Reviews</h1>
   <div>
-    {% for review in reviews %}
+    {% for review in restaurant.reviews.all %}
     <hr/>
-    <div class="row" style="background-color:white;">
+    <div class="row">
       <div class="col-3">
         <h5>{{ review.customer_name }}</h5>
         <h6>{{ review.rating }} / 10</h6>
+      </div>
+      <div class="col-6">
+        <p>{{ review.review_text }}</p>
       </div>
     </div>
     {% empty %}
