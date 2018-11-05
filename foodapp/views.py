@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.shortcuts import get_object_or_404
+from django.shortcuts import HttpResponseRedirect
 from foodapp.models import Restaurant
 from foodapp.forms import ReviewForm
 
@@ -20,7 +21,7 @@ def add_review(request, pk):
             review = form.save(commit=False)
             review.restaurant = restaurant
             review.save()
-            return redirect('restaurant_detail', pk=restaurant.pk)
+            return HttpResponseRedirect(reverse('foodapp:restaurant_detail',args = (restaurant.id,)))
     else:
         form = ReviewForm()
     return render(request, 'foodapp/add_review.html', {'form': form})
