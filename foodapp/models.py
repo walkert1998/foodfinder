@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils import timezone
 
 # Create your models here.
 
@@ -49,7 +49,11 @@ class Tag(models.Model):
     restaurant = models.ForeignKey(Restaurant)
 
 class Review(models.Model):
-    customer_name = models.CharField(max_length=200, null=True, blank=True)
+    name = models.CharField(max_length=200, null=True)
+    created_date = models.DateTimeField(default=timezone.now)
     rating = models.IntegerField()
     review_text = models.TextField(null=True, blank=True)
-    restaurant = models.ForeignKey(Restaurant)
+    restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE, related_name='reviews')
+
+    def __str__(self):
+        return self.review_text

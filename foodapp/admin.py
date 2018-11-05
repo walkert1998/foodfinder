@@ -17,3 +17,4 @@ class RestaurantAdmin(admin.ModelAdmin):
     inlines = [TagInline, ReviewInLine]
 
 admin.site.register(Restaurant, RestaurantAdmin)
+admin.site.register(Review)
