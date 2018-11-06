@@ -102,6 +102,12 @@ function getCurrencyUsingJQuery() {
                 <option value="USD">USD</option>
               </select>
             </div>
+
+            {% if restaurant.website %}
+            <a href="{{restaurant.website}}">
+              Official Website
+            </a>
+            {% endif %}
           </div>
           <div class="col-3" style="width:418px;padding:0px;height:242px;">
             <div class="row" style="height:17px;">
