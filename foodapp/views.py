@@ -25,7 +25,7 @@ def add_review(request, slug):
             review = form.save(commit=False)
             review.restaurant = restaurant
             review.save()
-            return HttpResponseRedirect(reverse('foodapp:restaurant_detail',args = (restaurant.id,)))
+            return HttpResponseRedirect(reverse('foodapp:restaurant_detail',args = (restaurant.slug,)))
     else:
         form = ReviewForm()
     return render(request, 'foodapp/add_review.html', {'form': form})
