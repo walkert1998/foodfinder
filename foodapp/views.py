@@ -25,3 +25,6 @@ def add_review(request, pk):
     else:
         form = ReviewForm()
     return render(request, 'foodapp/add_review.html', {'form': form})
+
+def weekly_recc(request):
+    return HttpResponseRedirect('/weekly-reccomendation')

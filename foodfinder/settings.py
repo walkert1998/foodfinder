@@ -188,6 +188,7 @@ CMS_TEMPLATES = (
     ('sidebar_left.html', 'Sidebar Left'),
     ('sidebar_right.html', 'Sidebar Right'),
     ('restaurant.html', 'Restaurant Info'),
+    ('foodapp/weekly_recc.html', 'Weekly Reccomendation'),
 )
 
 CMS_PERMISSION = True
