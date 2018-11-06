@@ -33,12 +33,52 @@
 
 </style>
 
+<script>
+
+function getCurrencyUsingJQuery() {
+  var currValLow = Number("{{ restaurant.lowest_price }}");
+  var currValHigh = Number("{{ restaurant.highest_price }}");
+  var fr = "CAD";
+
+  var currToSelect = $("#CURR_TO");
+  var to = currToSelect.val();
+
+
+  var currId = fr + "_" + to;
+  $.getJSON("https://free.currencyconverterapi.com/api/v6/convert?q=" + currId + "&compact=y&callback=?",
+    function(data){
+      try {
+       currValLow = Math.round(data[currId].val * currValLow);
+       currValHigh = Math.round(data[currId].val * currValHigh);
+
+       window.alert(currValLow);
+       window.alert(currValHigh);
+
+     } catch (e) {
+      alert("Please enter a number in the Amount field.");
+    }
+
+  });
+
+}
+
+
+</script>
+
 <body>
   <nav class="navbar navbar-dark navbar-expand-lg fixed-top portfolio-navbar gradient" style="background-color:rgb(161,248,232);">
       <div class="container"><a class="navbar-brand logo" href="/">FoodFinder</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse"
               id="navbarNav">
               <ul class="nav navbar-nav ml-auto">
+
+                <li class="nav-item" role="presentation"><a class="nav-link active">
+                  <select id="CURR_TO" onchange="getCurrencyUsingJQuery()">
+                    <option value="CAD" selected>CAD</option>
+                    <option value="CNY">CNY</option>
+                    <option value="USD">USD</option>
+                  </select>
+                </li>
                   <li class="nav-item" role="presentation"><a class="nav-link active" href="/weekly-recommendation">Weekly Recommendation</a></li>
               </ul>
           </div>
@@ -268,6 +308,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
   <script src="{% static 'foodapp/js/Simple-Slider.js' %}"></script>
   <script src="{% static 'foodapp/js/theme.js' %}"></script>
+  <script>
+    $(document).foundation();
+  </script>
 </body>
 {% endblock %}
 </html>
