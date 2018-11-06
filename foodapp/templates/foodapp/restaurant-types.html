@@ -32,7 +32,11 @@
         <section class="portfolio-block block-intro" style="width:992;height:35px;padding:0px;"></section>
         <section class="portfolio-block call-to-action border-bottom" style="height:52px;width:991px;padding:1px;">
             <div class="container">
-                <p style="height:65px;font-size:30px;padding:2px;margin:0px 0px 30px 45px;">&nbsp;All Restaurants tagged "Cafe"</p>
+              {% for restaurant in restaurants %}
+              {% if forloop.first %}
+                <p style="height:65px;font-size:30px;padding:2px;margin:0px 0px 30px 45px;text-transform: capitalize;">&nbsp;All Restaurants tagged "{{restaurant.tag}}"</p>
+                {% endif %}
+              {% endfor %}
             </div>
         </section>
     </main>
@@ -41,9 +45,6 @@
         <div class="container">
             <section class="portfolio-block skills" style="padding:73px;">
                 <div class="container">
-                    <div class="heading">
-                        <h2><btn class="btn btn-outline-primary active btn-block btn-lg" role="button" style="color:white;"><span style="text-decoration: underline;">CAFE'S</span></btn></h2>
-                    </div>
                     <div class="row">
                         {% for restaurant in restaurants %}
                         {% if restaurant.tag in request.path %}
