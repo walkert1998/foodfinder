@@ -8,8 +8,6 @@ TAGS = [
     ('pizza', 'Pizza'),
     ('pub', 'Pub'),
     ('global', 'Global'),
-    ('turkish', 'Turkish'),
-    ('chinese', 'Chinese'),
     ('bistro', 'Bistro'),
 ]
 class Restaurant(models.Model):
