@@ -13,11 +13,9 @@ def restaurant_detail(request, slug):
     restaurant = get_object_or_404(Restaurant, slug=slug)
     return render(request, 'foodapp/restaurant_detail.html', {'restaurant': restaurant})
 
-def restaurant_types(request, slug):
-    restaurant = get_object_or_404(Restaurant, slug=slug)
-    tag = restaurant.tag
+def restaurant_types(request, tag):
     restaurants = Restaurant.objects.filter(tag=tag)
-    return render(request, 'foodapp/restaurant_types.html', {'restaurants': restaurants})
+    return render(request, 'foodapp/restaurant-types.html', {'restaurants': restaurants})
 
 def add_review(request, slug):
     restaurant = get_object_or_404(Restaurant, slug=slug)
