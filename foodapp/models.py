@@ -39,14 +39,11 @@ class Restaurant(models.Model):
     friday_hours = models.CharField(max_length=200, blank=True, null=True)
     saturday_hours = models.CharField(max_length=200, blank=True, null=True)
     sunday_hours = models.CharField(max_length=200, blank=True, null=True)
+    tag = models.CharField(max_length=200, choices=TAGS, default='cafe')
+    slug = models.SlugField(max_length=200, null=True, unique=True)
 
     def __str__(self):
         return self.name
-
-
-class Tag(models.Model):
-    tag = models.CharField(max_length=200, choices=TAGS)
-    restaurant = models.ForeignKey(Restaurant)
 
 class Review(models.Model):
     name = models.CharField(max_length=200, null=True)

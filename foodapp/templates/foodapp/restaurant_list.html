@@ -57,28 +57,13 @@
             <section class="portfolio-block skills" style="padding:73px;">
                 <div class="container">
                     <div class="heading">
-                        <h2><btn class="btn btn-outline-primary active btn-block btn-lg" role="button" style="color:white;"><span style="text-decoration: underline;">CAFE'S</span></btn></h2>
+                        <h2><a class="btn btn-outline-primary active btn-block btn-lg" role="button" style="color:white;" href="/restaurants/cafe"><span style="text-decoration: underline;">CAFE'S</span></a></h2>
                     </div>
                     <div class="row">
-                      <!-- {% for restaurant in restaurants %}
+
                         <div class="col-md-4">
                             <div class="card special-skill-item border-0">
-                              <a href="{% url 'foodapp:restaurant_detail' pk=restaurant.pk %}">
-                                <div class="card-header bg-transparent border-0">
-                                    <img class="rounded-circle img-fluid" src="{% static 'foodapp/img/1470250937442.jpg' %}" style="width:163px;">
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="text-primary card-title">{{restaurant.name}}</h3>
-                                    <p class="card-text">Price Range: ${{restaurant.lowest_price}} - ${{restaurant.highest_price}}&nbsp;</p>
-                                    <p class="card-text">Food Finder Rank: {{ restaurant.rating }}/10</p>
-                                </div>
-                              </a>
-                            </div>
-                        </div>
-                        {% endfor %} -->
-                        <div class="col-md-4">
-                            <div class="card special-skill-item border-0">
-                              <a href="/5/">
+                              <a href="/just-us">
                                 <div class="card-header bg-transparent border-0">
 
                                     <img class="rounded-circle" src="{% static 'foodapp/img/1470250937442.jpg' %}" width="50px" height="50px" style="width:163px;height:163.734px;">
@@ -130,14 +115,14 @@
             <section class="portfolio-block skills" style="padding:73px;background-image:url(&quot;linear-gradient(120deg,#7f70f5,#0ea0ff);color:#fff;">
                 <div class="container">
                     <div class="heading">
-                        <h2><button class="btn btn-outline-primary active btn-block btn-lg" type="button" style="color:rgb(14,160,255);background-color:white;">PIZZA</button></h2>
+                        <a class="btn btn-outline-primary active btn-block btn-lg" style="color:rgb(14,160,255);background-color:white;" href="/restaurants/pizza">PIZZA</a>
                     </div>
                     <div class="row">
                         <div class="col-md-4">
                             <div class="card special-skill-item border-0">
                               <a href="/8/">
                                 <div class="card-header bg-transparent border-0"><img class="rounded-circle" src="{% static 'foodapp/img/pronto.png' %}" style="width:163px;height:163.734px;background-color:none;"></div>
-                                <div class="card-body">
+                                <div class="card-body"">
                                     <h3 class="text-primary card-title">PRONTO PIZZA</h3>
                                     <p class="card-text">Price Range: $5 - $30 &nbsp; &nbsp;</p>
                                     <p class="card-text">FoodFinder Rating: 6/10</p>
@@ -145,18 +130,7 @@
                               </a>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="card special-skill-item border-0">
-                              <a href="/9/">
-                                <div class="card-header bg-transparent border-0"><img class="rounded-circle" src="{% static 'foodapp/img/picasso.jpg' %}" style="width:163px;height:163.734px;background-color:none;"></div>
-                                <div class="card-body">
-                                    <h3 class="text-primary card-title">PICASSO PIZZA</h3>
-                                    <p class="card-text">Price Range: $5 - $30 &nbsp; &nbsp;</p>
-                                    <p class="card-text">FoodFinder Rating: 6/10</p>
-                                </div>
-                              </a>
-                            </div>
-                        </div>
+
                         <div class="col-md-4">
                             <div class="card special-skill-item border-0">
                               <a href="/10/">

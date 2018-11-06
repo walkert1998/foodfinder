@@ -9,12 +9,18 @@ def restaurant_list(request):
     restaurants = Restaurant.objects.all()
     return render(request, 'foodapp/restaurant_list.html', {'restaurants': restaurants})
 
-def restaurant_detail(request, pk):
-    restaurant = get_object_or_404(Restaurant, pk=pk)
+def restaurant_detail(request, slug):
+    restaurant = get_object_or_404(Restaurant, slug=slug)
     return render(request, 'foodapp/restaurant_detail.html', {'restaurant': restaurant})
 
-def add_review(request, pk):
-    restaurant = get_object_or_404(Restaurant, pk=pk)
+def restaurant_types(request, slug):
+    restaurant = get_object_or_404(Restaurant, slug=slug)
+    tag = restaurant.tag
+    restaurants = Restaurant.objects.filter(tag=tag)
+    return render(request, 'foodapp/restaurant_types.html', {'restaurants': restaurants})
+
+def add_review(request, slug):
+    restaurant = get_object_or_404(Restaurant, slug=slug)
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():

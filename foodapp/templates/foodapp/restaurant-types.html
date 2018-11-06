@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+{% block content %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="{% static 'foodapp/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="{% static 'foodapp/fonts/ionicons.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="{% static 'foodapp/css/Article-Dual-Column.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'foodapp/css/Map-Clean.css' %}">
+    <link rel="stylesheet" href="{% static 'foodapp/css/Simple-Slider.css' %}">
+    <link rel="stylesheet" href="{% static 'foodapp/css/Social-Icons.css' %}">
+    </head>
+
+<body style="background-color:rgb(248,243,243);">
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top portfolio-navbar gradient" style="background-color:rgb(161,248,232);">
+        <div class="container"><a class="navbar-brand logo" href="#">FoodFinder</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                id="navbarNav">
+            </div>
+        </div>
+    </nav>
+    <main class="page lanidng-page">
+        <section class="portfolio-block block-intro" style="width:992;height:35px;padding:0px;"></section>
+        <section class="portfolio-block call-to-action border-bottom" style="height:52px;width:991px;padding:1px;">
+            <div class="container">
+                <p style="height:65px;font-size:30px;padding:2px;margin:0px 0px 30px 45px;">&nbsp;WELCOME TO FOOD FINDER</p>
+            </div>
+        </section>
+    </main>
+    <section class="portfolio-block website gradient" style="padding:29px;">
+        <div class="container" style="height:244px;">
+            <div class="row">
+                <div class="col-md-12 col-lg-5" style="height:188px;">
+                  <img style="height:250px;" src="{% static 'foodapp/img/naked-crepe.jpg' %}">
+                </div>
+                <div class="col-lg-7" style="height:36px;">
+                    <h3>Weekly Reccomendation:</h3>
+                    <h4>The Naked Crepe Bistro</h4>
+                    <br  />
+                    <a href="/weekly-reccomendation" style="color: white;">Read about this weeks Weekly Reccomendation!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="portfolio-block website gradient" style="padding:29px;background-image:url(&quot;none&quot;);">
+        <div class="container">
+            <section class="portfolio-block skills" style="padding:73px;">
+                <div class="container">
+                    <div class="heading">
+                        <h2><btn class="btn btn-outline-primary active btn-block btn-lg" role="button" style="color:white;"><span style="text-decoration: underline;">CAFE'S</span></btn></h2>
+                    </div>
+                    <div class="row">
+                        {% for restaurant in restaurants %}
+                        <div class="col-md-4">
+                            <div class="card special-skill-item border-0">
+                              <a href="/5/">
+                                <div class="card-header bg-transparent border-0">
+
+                                    <img class="rounded-circle" src="{% static 'foodapp/img/1470250937442.jpg' %}" width="50px" height="50px" style="width:163px;height:163.734px;">
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="text-primary card-title">{{ restaurant.name }}</h3>
+                                    <p class="card-text">Price Range: ${{ restaurant.lowest_price }} - ${{ restaurant.highest_price }}&nbsp;</p>
+                                    <p class="card-text">FoodFinder Rating: {{ restaurant.rating }}/10&nbsp;</p>
+                                </div>
+                              </a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    
+    <footer class="page-footer">
+        <div class="container">
+        </div>
+    </footer>
+    <script src="{% static 'foodapp/js/jquery.min.js' %}"></script>
+    <script src="{% static 'foodapp/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+    <script src="{% static 'foodapp/js/Simple-Slider.js' %}"></script>
+    <script src="{% static 'foodapp/js/theme.js' %}"></script>
+</body>
+{% endblock %}
+</html>
