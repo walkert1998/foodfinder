@@ -39,7 +39,7 @@ function getCurrencyUsingJQuery() {
   var currValLow = Number("{{ restaurant.lowest_price }}");
   var currValHigh = Number("{{ restaurant.highest_price }}");
   var fr = "CAD";
-
+  var range = document.getElementById("price-range");
   var currToSelect = $("#CURR_TO");
   var to = currToSelect.val();
 
@@ -50,10 +50,14 @@ function getCurrencyUsingJQuery() {
       try {
        currValLow = Math.round(data[currId].val * currValLow);
        currValHigh = Math.round(data[currId].val * currValHigh);
-
-       window.alert(currValLow);
-       window.alert(currValHigh);
-
+       if (to == "CAD" || to == "USD")
+       {
+          range.innerHTML = "Price Range: $" + currValLow + " - $" + currValHigh;
+        }
+       else
+       {
+          range.innerHTML = "Price Range: ¥" + currValLow + " - ¥" + currValHigh;
+        }
      } catch (e) {
       alert("Please enter a number in the Amount field.");
     }
@@ -71,14 +75,6 @@ function getCurrencyUsingJQuery() {
           <div class="collapse navbar-collapse"
               id="navbarNav">
               <ul class="nav navbar-nav ml-auto">
-
-                <li class="nav-item" role="presentation"><a class="nav-link active">
-                  <select id="CURR_TO" onchange="getCurrencyUsingJQuery()">
-                    <option value="CAD" selected>CAD</option>
-                    <option value="CNY">CNY</option>
-                    <option value="USD">USD</option>
-                  </select>
-                </li>
                   <li class="nav-item" role="presentation"><a class="nav-link active" href="/weekly-recommendation">Weekly Recommendation</a></li>
               </ul>
           </div>
@@ -97,7 +93,14 @@ function getCurrencyUsingJQuery() {
             <p style="font-size: 15px;height: 5px;"><i class="icon ion-ios-telephone" style="width:auto;"></i> {{restaurant.phone_number}}</p>
             <p style="font-size: 15px;height: 5px;"><i class="icon ion-ios-location" style="width:auto;"></i> {{restaurant.address}}</p>
             <p style="font-size: 15px;height: 5px;"><i class="icon ion-ios-star"></i> {{restaurant.rating}}/10</p>
-            <p style="font-size: 15px;height: 5px;">Price Range: ${{restaurant.lowest_price}}-${{restaurant.highest_price}}</p>
+            <div class="row">
+              <p id="price-range" style="font-size: 15px;height: 5px;">Price Range: ${{restaurant.lowest_price}}-${{restaurant.highest_price}}</p>
+              <select id="CURR_TO" onchange="getCurrencyUsingJQuery()" style="height: 25px;margin-left: 5px;">
+                <option value="CAD" selected>CAD</option>
+                <option value="CNY">CNY</option>
+                <option value="USD">USD</option>
+              </select>
+            </div>
           </div>
           <div class="col-3" style="width:418px;padding:0px;height:242px;">
             <div class="row" style="height:17px;">
