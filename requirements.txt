@@ -1,5 +1,5 @@
 dj-database-url==0.5.0
-Django==1.11.16
+django>=1.11.19
 django-admin-sortable==2.1.9
 django-classy-tags==0.8.0
 django-cms==3.5.2
